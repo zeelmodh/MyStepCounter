@@ -1,6 +1,7 @@
 package com.example.mystepcounter
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -8,7 +9,6 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.mystepcounter.databinding.LaunchingActBinding
@@ -30,9 +30,16 @@ class LaunchingAct : AppCompatActivity(), SensorEventListener {
         if (isPermissionGranted()){
             requestPermission()
         }
+        init()
 //        do { requestPermission() }
 //        while (isPermissionGranted())
 
+    }
+    private fun init(){
+        binding.next.setOnClickListener {
+            val intent = Intent(this@LaunchingAct, ScrollAct::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
