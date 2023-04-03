@@ -37,14 +37,14 @@ class LaunchingAct : AppCompatActivity(), SensorEventListener {
     }
     private fun init(){
         binding.next.setOnClickListener {
-//            val intent = Intent(this@LaunchingAct, ScrollAct::class.java)
-//            startActivity(intent)
+            val intent = Intent(this@LaunchingAct, ScrollAct::class.java)
+            startActivity(intent)
 
 //            val intent = Intent(this@LaunchingAct, ScrollViewPager::class.java)
 //            startActivity(intent)
 
-            val intent = Intent(this@LaunchingAct, ScrollRecycleView::class.java)
-            startActivity(intent)
+//            val intent = Intent(this@LaunchingAct, ScrollRecycleView::class.java)
+//            startActivity(intent)
         }
     }
 
