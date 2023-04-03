@@ -3,19 +3,23 @@ package com.example.mystepcounter
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.example.mystepcounter.Fragments.TabOne
 import com.example.mystepcounter.Fragments.TabThree
 import com.example.mystepcounter.Fragments.TabTwo
 import com.example.mystepcounter.databinding.ActivityScrollBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import org.jetbrains.annotations.Nullable
 
 class ScrollAct : AppCompatActivity() {
     lateinit var binding: ActivityScrollBinding
 
-    lateinit var fragOne: TabOne
-    lateinit var fragTwo: TabTwo
-    lateinit var fragThree: TabThree
+    lateinit var tabOne: TabOne
+    lateinit var tabTwo: TabTwo
+    lateinit var tabThree: TabThree
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +31,9 @@ class ScrollAct : AppCompatActivity() {
         binding.tableLayout.addTab(binding.tableLayout.newTab().setText("Tab Two"))
         binding.tableLayout.addTab(binding.tableLayout.newTab().setText("Tab Three"))
 
-        fragOne = TabOne()
-        fragTwo = TabTwo()
-        fragThree = TabThree()
+        tabOne = TabOne()
+        tabTwo = TabTwo()
+        tabThree = TabThree()
 
 //        binding.scrollView.viewTreeObserver.addOnScrollChangedListener {
 //            val scrollY: Int = binding.scrollView.scrollY
@@ -42,6 +46,7 @@ class ScrollAct : AppCompatActivity() {
 //            }
 //        }
 
+//        working but not smooth
         binding.tableLayout.setOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 binding.scrollView.isSmoothScrollingEnabled = true
@@ -58,5 +63,4 @@ class ScrollAct : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
     }
-
 }

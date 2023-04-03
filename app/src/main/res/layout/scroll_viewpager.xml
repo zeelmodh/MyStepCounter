@@ -4,20 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScrollAct">
+    tools:context=".ScrollViewPager">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="#D0DAD8D8"
+        android:layout_height="wrap_content"
         android:backgroundTint="#343F77"
-        app:tabIndicatorColor="@color/white"
-        app:tabMode="fixed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@color/white"
+        app:tabMode="fixed"
+        app:tabIndicatorAnimationMode="fade"
+        app:tabIndicatorAnimationDuration="10"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="#D0DAD8D8" >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab 1" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab 2" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab 3" />
+    </com.google.android.material.tabs.TabLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -70,10 +88,18 @@
                 tools:layout="@layout/fragment_tab_three"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="63dp" />
-            </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 
-        <!--    </ScrollView>-->
-
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--    -->
 </androidx.constraintlayout.widget.ConstraintLayout>
