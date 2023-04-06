@@ -70,16 +70,8 @@ class ScrollAct : AppCompatActivity() {
             "Description of tab Three is showing here, you can click on tab 2 to get tab three's description up " +
                     "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up " +
                     "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up " +
-                    "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up" +
-                    "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up " +
-                    "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up " +
-                    "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up " +
                     "\n Description of tab Three is showing here, you can click on tab 2 to get tab three's description up ",
             "Description of tab Three is showing here, you can click on tab 3 to get tab three's description up " +
-                    "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
-                    "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
-                    "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
-                    "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
                     "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
                     "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
                     "\n Description of tab Three is showing here, you can click on tab 3 to get tab three's description up" +
@@ -133,7 +125,7 @@ class ScrollAct : AppCompatActivity() {
                 super.onScrolled(recyclerView, dx, dy)
                 if (isScrolling) {
                     val position: Int = linearLayoutManager.findFirstVisibleItemPosition()
-                    if (position != binding.tableLayout.getSelectedTabPosition()) {
+                    if (position != binding.tableLayout.selectedTabPosition) {
                         val tab: TabLayout.Tab = binding.tableLayout.getTabAt(position)!!
                         tab.select()
                     }

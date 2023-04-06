@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mystepcounter.dataClasses.DataList
 import com.example.mystepcounter.databinding.ScrollRecyclerviewBinding
 import com.google.android.material.tabs.TabLayout
 
@@ -87,7 +88,7 @@ class ScrollRecycleView : AppCompatActivity() {
                             listData.desList.descriptionList[index].let { sd ->
                                 if (selectedSubCatPosition != sd.index) {
                                     selectedSubCatPosition = sd.index
-//                                    recyclerTabAdapter?.updateList(selectedSubCatPosition)
+                                    recyclerTabAdapter?.updateList(selectedSubCatPosition)
                                     binding.recyclerView.layoutManager?.scrollToPosition(selectedSubCatPosition)
                                 }
                             }
@@ -131,12 +132,6 @@ class ScrollRecycleView : AppCompatActivity() {
 
 }
 
-data class DataList(var titleList: ArrayList<ListTitle>, var desList: Description) {
-    class ListTitle(var title: String)
-//    class ListDescription(var description: String)
-    class Description(var descriptionList: ArrayList<ListDescription>)
-    class ListDescription(var description: String, var title: String, var index: Int)
-}
 
 
 
