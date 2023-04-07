@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
-import com.example.mystepcounter.Fragments.TabOne
-import com.example.mystepcounter.Fragments.TabThree
-import com.example.mystepcounter.Fragments.TabTwo
 import com.example.mystepcounter.dataClasses.DataList
 import com.example.mystepcounter.databinding.ActivityScrollBinding
 import com.google.android.material.tabs.TabLayout
