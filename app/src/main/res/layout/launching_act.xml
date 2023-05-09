@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LaunchingAct">
+    tools:context=".activity.LaunchingAct">
 
     <LinearLayout
         android:id="@+id/lilayout"
         android:layout_width="250dp"
         android:layout_height="250dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_centerInParent="true"
         android:background="@drawable/circlebg"
         android:gravity="center"
@@ -86,11 +88,12 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/walkingDistance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="7.78 km"
+                    android:text="0.0 Km"
                     android:textColor="@color/white"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -117,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="2.40 km"
+                    android:text="1.5 hr "
                     android:textColor="@color/white"
                     android:textSize="17sp"
                     android:textStyle="bold" />
