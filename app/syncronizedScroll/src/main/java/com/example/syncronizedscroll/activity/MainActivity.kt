@@ -1,17 +1,19 @@
-package com.example.syncronizedscroll
+package com.example.syncronizedscroll.activity
 
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
+import com.example.syncronizedscroll.Category
+import com.example.syncronizedscroll.CollapseItem
+import com.example.syncronizedscroll.Item
 import com.example.syncronizedscroll.adapter.CategoryAdapter
 import com.example.syncronizedscroll.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 
-class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
+class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener{
 
     lateinit var binding: ActivityMainBinding
     lateinit var categories: List<Category>
@@ -59,17 +61,21 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
             "Item 10"
         )
 
+        val collapseItemOneList = listOf<String>("Collapsing Item 1", "Collapsing Item 2", "Collapsing Item 3")
+        val collapseItemTwoList = listOf<String>("Collapsing Item 1 of list TWO", "Collapsing Item 2 of list TWO",
+            "Collapsing Item 3 of list TWO", "Collapsing Item 4 of list TWO", "Collapsing Item 5 of list TWO")
+
         categories = mutableListOf(
-            Category("Tab One", Item(itemOneList)),
-            Category("Tab Two", Item(itemTwoList)),
-            Category("Tab Three", Item(itemThreeList)),
-            Category("Tab Four", Item(itemFourList))
+            Category("Tab One", Item(itemOneList, CollapseItem(collapseItemOneList))),
+            Category("Tab Two", Item(itemTwoList, CollapseItem(collapseItemTwoList))),
+            Category("Tab Three", Item(itemThreeList, CollapseItem(collapseItemOneList))),
+            Category("Tab Four", Item(itemFourList, CollapseItem(collapseItemTwoList)))
         )
 
         binding.recyclerView.apply {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
-            adapter = CategoryAdapter(this@MainActivity, categories)
+            adapter = CategoryAdapter(this@MainActivity, categories, binding.recyclerView)
         }
 
         indices = categories.indices.toList()

@@ -4,7 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
+
+<!--    <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" >-->
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp">-->
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+<!--    </com.google.android.material.appbar.CollapsingToolbarLayout>-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tableLayout"
