@@ -35,7 +35,7 @@ open class WorkerClass(context: Context, workerParams: WorkerParameters) :
         notificationLayout.setTextViewText(R.id.walkedSteps, "Your Steps : $walkedSteps / $totalSteps")
         notificationLayout.setTextViewText(R.id.totalDistance, "Total Distance : $totalDistance")
 
-        val pendingIntent: PendingIntent = Intent(applicationContext, Class.forName("com.example.syncronizedscroll.MainActivity"))
+        val pendingIntent: PendingIntent = Intent(applicationContext, Class.forName("com.example.syncronizedscroll.activity.MainActivity"))
             .let { notificationIntent ->
                 PendingIntent.getActivity(applicationContext, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE)
             }
